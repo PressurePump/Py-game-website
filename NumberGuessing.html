@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number Guessing Game with Score</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  </head>
+  <body>
+    <h1>Number Guessing Game 🎯</h1>
+    <p>Guess a number between 1 and 10. You earn 10 points for a correct guess!</p>
+
+    <py-script>
+        import random
+        from pyscript import display
+
+        score = 0
+        play_again = "y"
+
+        while play_again.lower() == "y":
+            target = random.randint(1, 10)
+            guess = int(input("Guess a number 1-10: "))
+
+            if guess == target:
+                print("You guessed it! 🎉 +10 points")
+                score += 10
+            else:
+                print(f"Wrong! The number was {target}.")
+
+            print(f"Current Score: {score}")
+            play_again = input("Play again? (y/n): ")
+
+        print(f"Game Over! Your final score: {score}")
+    </py-script>
+  </body>
+</html>
+
